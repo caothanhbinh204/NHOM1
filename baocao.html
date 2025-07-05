@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Thống kê & Tư vấn Tâm lý</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <link rel="stylesheet" href="baocao.css">
+</head>
+
+<body>
+  <header class="top-bar">
+    <h1 class="title">📊 STATISTICS AND REPORTS</h1>
+    <div class="search-bar">
+      <input type="text" placeholder="Tìm kiếm khách hàng, hợp đồng...">
+      <button class="search-btn">🔍</button>
+    </div>
+    <div class="icons">
+      <a href="https://mail.google.com/" class="icon" title="Hộp thư">
+        <img src="email.png" alt="Email Icon" />
+      </a>
+      <button class="icon" title="Thong Bao" onclick="showNotificationBox()">
+        <img src="active.png" alt="Notifi Icon">
+      </button>
+      <img src="avatar.png" class="avatar-img" onclick="toggleMenu()">
+
+      <div id="profileMenu" class="menu" style="display: none;">
+        <ul>
+          <li><a href="#">Personal information</a></li>
+          <li><a href="#">Log out</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard" id="dashboard">
+    <div class="stats-box">
+      <div class="box green">
+        <h2>20</h2>
+        <p>Number of connections</p>
+      </div>
+      <div class="box blue">
+        <h2>6</h2>
+        <p>First time visitor</p>
+      </div>
+      <div class="box orange">
+        <h2>6 <span class="plus">+2</span></h2>
+        <p>Returning customers</p>
+      </div>
+    </div>
+
+    <div class="charts">
+      <div class="chart-container">
+        <h3>Status</h3>
+        <canvas id="statusChart"></canvas>
+        <div class="legend">
+          <span class="dot" style="background:#80deea;"></span> Inactive
+          <span class="dot" style="background:#26a69a;"></span> Activities
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <h3>Sex</h3>
+        <canvas id="genderChart"></canvas>
+        <div class="legend">
+          <span class="dot" style="background:#42a5f5;"></span> Unknown
+          <span class="dot" style="background:#ffeb3b;"></span> Female
+          <span class="dot" style="background:#66bb6a;"></span> Male
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <h3>Frequency of visits</h3>
+        <canvas id="frequencyChart"></canvas>
+        <div class="legend">
+          <span class="dot" style="background:#ef5350;"></span> April
+          <span class="dot" style="background:#ffca28;"></span> May
+          <span class="dot" style="background:#42a5f5;"></span> June
+          <span class="dot" style="background:#26c6da;"></span> July
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="side-buttons">
+    <button onclick="history.back()">🔙 Back</button>
+    <button onclick="downloadPDF()">📄 PDF</button>
+    <button onclick="window.print()">🖨️ In</button>
+  </div>
+  <script src="baocao.js"></script>
+</body>
+
+</html>
